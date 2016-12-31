@@ -21,7 +21,7 @@ in the webOutputDir property via the command line).
 */
 
 task bundleWeb(type: Zip) {
-    baseName = 'web'
+    baseName = zipName
     destinationDir = file(webOutputDir)
 
     from 'src/web'

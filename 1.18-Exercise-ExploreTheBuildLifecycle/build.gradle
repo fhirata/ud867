@@ -31,3 +31,4 @@ task second(dependsOn: first) {
 }
 
 println 'Second top level script element'
+println "Third"

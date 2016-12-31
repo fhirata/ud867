@@ -25,6 +25,7 @@
         a) Delete the "help" folder created by the "copyWeb" task.
 */
 
+
 task copyWeb(type: Copy) {
     from "src/web"
     from("src/docs") {
