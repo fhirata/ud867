@@ -1,27 +1,27 @@
-package com.udacity.gradle.builditbigger;
+package com.example.fabiohh.jokelibrary;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
+/**
+ * Created by fabiohh on 12/31/16.
+ */
 
-public class MainActivity extends AppCompatActivity {
+public class JokeDisplayLibActivity extends AppCompatActivity {
     public static final String JOKE_KEY = "joke_key";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_joke);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_joke, menu);
         return true;
     }
 
@@ -39,10 +39,4 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    public void tellJoke(View view) {
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
-    }
-
-
 }
