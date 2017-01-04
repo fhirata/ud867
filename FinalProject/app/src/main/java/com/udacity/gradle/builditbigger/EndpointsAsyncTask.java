@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
-import android.widget.Toast;
 
 import com.example.fabiohh.jokelibrary.JokeDisplayLibActivity;
 import com.example.fabiohh.myapplication.backend.myApi.MyApi;
@@ -54,7 +53,7 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
 
     @Override
     protected void onPostExecute(String result) {
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        //Toast.makeText(context, result, Toast.LENGTH_LONG).show();
         Intent intent = new Intent(context, JokeDisplayLibActivity.class);
         intent.putExtra(JOKE_KEY, result);
 
