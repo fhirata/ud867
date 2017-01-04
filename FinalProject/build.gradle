@@ -17,3 +17,17 @@ allprojects {
         jcenter()
     }
 }
+
+task GCETest (dependsOn: [":backend:appengineRun", ":app:connectedAndroidTest", ":backend:appengineStop"]) {
+    evaluationDependsOn ":backend"
+
+    project(":backend") {
+        appengine {
+            daemon true
+        }
+    }
+
+    doLast {
+        println "AppEngine start/stop and tests are all done."
+    }
+}
