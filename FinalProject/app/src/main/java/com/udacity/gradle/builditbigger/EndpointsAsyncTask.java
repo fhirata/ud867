@@ -57,6 +57,10 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
         Intent intent = new Intent(context, JokeDisplayLibActivity.class);
         intent.putExtra(JOKE_KEY, result);
 
+        if (context instanceof MainActivity) {
+            ((MainActivity) context).setSpinnerOff();
+        }
+
         context.startActivity(intent);
     }
 }
