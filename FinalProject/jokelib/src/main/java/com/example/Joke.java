@@ -7,10 +7,14 @@ package com.example;
 public class Joke {
     protected String joke;
 
-    public Joke() {}
+    public Joke() {
+        joke = "";
+    }
 
     public Joke(String joke) {
-        this.joke = joke;
+        if (null != joke && !joke.isEmpty()) {
+            this.joke = joke;
+        }
     }
 
     public String getJoke() {

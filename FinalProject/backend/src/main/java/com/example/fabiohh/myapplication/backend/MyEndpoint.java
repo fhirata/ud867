@@ -37,7 +37,6 @@ public class MyEndpoint {
         JokeLibrary jokeLibrary = new JokeLibrary();
         Joke joke = jokeLibrary.getRandomJoke();
         response.setData(joke.getJoke());
-
         return response;
     }
 

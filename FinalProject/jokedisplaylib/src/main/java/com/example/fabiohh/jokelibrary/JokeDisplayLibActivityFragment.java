@@ -16,6 +16,7 @@ import static com.example.fabiohh.jokelibrary.JokeDisplayLibActivity.JOKE_KEY;
  */
 
 public class JokeDisplayLibActivityFragment extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -25,7 +26,11 @@ public class JokeDisplayLibActivityFragment extends Fragment {
         String jokeString = intent.getStringExtra(JOKE_KEY);
 
         TextView textview = (TextView) view.findViewById(R.id.joke_textview);
-        textview.setText(jokeString);
+        if (null != jokeString && !jokeString.isEmpty()) {
+            textview.setText(jokeString);
+        } else {
+            textview.setVisibility(View.GONE);
+        }
 
         return view;
     }

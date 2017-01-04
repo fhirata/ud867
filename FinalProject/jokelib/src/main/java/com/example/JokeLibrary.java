@@ -36,15 +36,18 @@ public class JokeLibrary {
             "\"Why did the chicken cross the road? To get to the other side.\""
     ));
 
-    public JokeLibrary() {
-    }
+    public JokeLibrary() { }
 
     public Joke getRandomJoke() {
 
         int timeMillis = (int) System.currentTimeMillis();
 
-        jokeBase = new Joke(jokeList.get((timeMillis % jokeCount)));
+        int index = (timeMillis % jokeCount);
+        if (jokeList.size() > index) {
+            jokeBase = new Joke(jokeList.get(index));
+            return jokeBase;
+        }
 
-        return jokeBase;
+        return new Joke();
     }
 }
